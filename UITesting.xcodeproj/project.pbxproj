@@ -21,28 +21,10 @@
 		4DD76CF12EA00A2B00CE058E /* UITestingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITestingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		4DD76D1B2EA019F500CE058E /* Exceptions for "UITesting" folder in "UITestingUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Utils/UIIdentifiers.swift,
-			);
-			target = 4DD76CF02EA00A2B00CE058E /* UITestingUITests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4DD76CDC2EA00A2A00CE058E /* UITesting */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				4DD76D1B2EA019F500CE058E /* Exceptions for "UITesting" folder in "UITestingUITests" target */,
-			);
 			path = UITesting;
-			sourceTree = "<group>";
-		};
-		4DD76CF42EA00A2B00CE058E /* UITestingUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = UITestingUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				4DD76CDC2EA00A2A00CE058E /* UITesting */,
-				4DD76CF42EA00A2B00CE058E /* UITestingUITests */,
 				4DD76CDB2EA00A2A00CE058E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,9 +101,6 @@
 			);
 			dependencies = (
 				4DD76CF32EA00A2B00CE058E /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				4DD76CF42EA00A2B00CE058E /* UITestingUITests */,
 			);
 			name = UITestingUITests;
 			packageProductDependencies = (

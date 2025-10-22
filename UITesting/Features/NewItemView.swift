@@ -17,7 +17,6 @@ struct NewItemView: View {
             TextField("Item name", text: $newItemName)
                 .padding()
                 .textFieldStyle(.roundedBorder)
-                .accessibilityIdentifier(UIIdentifiers.AddNewItemScreen.itemNameTextField)
             
             Button("Add Item") {
                 if !newItemName.isEmpty {
@@ -27,10 +26,7 @@ struct NewItemView: View {
             }
             .glassEffect()
             .disabled(newItemName.isEmpty)
-            .accessibilityIdentifier(UIIdentifiers.AddNewItemScreen.addButton)
         }
         .padding()
-        .accessibilityElement(children: .contain)
-        .accessibilityIdentifier(UIIdentifiers.AddNewItemScreen.sheet)
     }
 }

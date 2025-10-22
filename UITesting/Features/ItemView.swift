@@ -18,10 +18,8 @@ struct ItemView: View {
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Capsule().glassEffect())
-                        .accessibilityIdentifier(UIIdentifiers.ItemListScreen.item(item.id))
                 }
             }
-            .accessibilityIdentifier(UIIdentifiers.ItemListScreen.itemList)
             
             Divider()
             
@@ -31,14 +29,12 @@ struct ItemView: View {
                 }
                 .glassEffect()
                 .disabled(viewModel.deleteDisabled)
-                .accessibilityIdentifier(UIIdentifiers.ItemListScreen.deleteButton)
                 
                 Button("Add Item") {
                     viewModel.newItemSheetIsShown = true
                 }
                 .glassEffect()
                 .disabled(viewModel.deleteDisabled)
-                .accessibilityIdentifier(UIIdentifiers.ItemListScreen.addButton)
                 .sheet(isPresented: $viewModel.newItemSheetIsShown) {
                     NewItemView(viewModel: viewModel)
                 }
