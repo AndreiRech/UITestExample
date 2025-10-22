@@ -24,8 +24,10 @@ struct NewItemView: View {
                     dismiss()
                 }
             }
+            .padding()
             .glassEffect()
             .disabled(newItemName.isEmpty)
+            .foregroundStyle(Color(.systemBlue))
         }
         .padding()
     }

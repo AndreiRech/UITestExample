@@ -27,12 +27,14 @@ struct ItemView: View {
                 Button("Remove Last") {
                     viewModel.deleteLastItem()
                 }
+                .padding()
                 .glassEffect()
                 .disabled(viewModel.deleteDisabled)
                 
                 Button("Add Item") {
                     viewModel.newItemSheetIsShown = true
                 }
+                .padding()
                 .glassEffect()
                 .disabled(viewModel.deleteDisabled)
                 .sheet(isPresented: $viewModel.newItemSheetIsShown) {

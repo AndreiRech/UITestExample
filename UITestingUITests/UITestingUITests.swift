@@ -2,57 +2,40 @@
 //  UITestingUITests.swift
 //  UITestingUITests
 //
-//  Created by Andrei Rech on 15/10/25.
+//  Created by Andrei Rech on 22/10/25.
 //
 
 import XCTest
 
-@MainActor
 final class UITestingUITests: XCTestCase {
-    var app: XCUIApplication!
-    
-    var itemListScreen: ItemListScreen!
-    var addNewItemScreen: AddNewItemScreen!
-    
-    override func setUp() async throws {
+
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        
-        app = XCUIApplication()
+
+        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+
+    @MainActor
+    func testExample() throws {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
         app.launch()
-        
-        itemListScreen = ItemListScreen(app: app)
-        addNewItemScreen = AddNewItemScreen(app: app)
+
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
-    override func tearDown() async throws {
-        app = nil
-        itemListScreen = nil
-        addNewItemScreen = nil
-    }
-    
-    func testItemsShow() throws {
-        // Given
-        
-        // When
-         
-        // Then
-        XCTAssertTrue(itemListScreen.itemList.exists, "Should see the container (ScrollView with items)")
-        XCTAssertTrue(itemListScreen.getItemCount() > 0, "Should have at least one item")
-    }
-    
-    func testAddNewItem() throws {
-        // Given
-        let initialCount = itemListScreen.getItemCount()
-        XCTAssertTrue(initialCount > 0, "Should contain at least one item")
-                
-        // When
-        itemListScreen.tapAddButton()
-        addNewItemScreen.addNewItem(name: "Fernando")
-        
-        // Then
-        XCTAssertTrue(addNewItemScreen.waitForSheetToDisappear(), "Should close the add item sheet")
-        
-        let finalCount = itemListScreen.getItemCount()
-        XCTAssertEqual(initialCount + 1, finalCount, "Should have one more item")
+
+    @MainActor
+    func testLaunchPerformance() throws {
+        // This measures how long it takes to launch your application.
+        measure(metrics: [XCTApplicationLaunchMetric()]) {
+            XCUIApplication().launch()
+        }
     }
 }
